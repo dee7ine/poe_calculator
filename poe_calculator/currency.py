@@ -13,7 +13,7 @@ async def get_currency_json(league: str, type: str) -> None:
             with open('response.json', 'wb') as out:
                 async for chunk in response.content.iter_chunked(4096):
                     out.write(chunk)
-                print('Succesfully parsed poe.ninja response')
+                return True
                     
 if __name__ == "__main__":      
     asyncio.run(get_currency_json(league='Crucible', type='Currency'))
